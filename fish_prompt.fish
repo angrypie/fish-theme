@@ -1,5 +1,4 @@
-
-# fish theme: edan
+# fish theme
 
 function fish_prompt
   set fish_greeting
@@ -75,3 +74,13 @@ function fish_right_prompt
     set_color normal
   end
 end
+
+set -U fish_color_autosuggestion 9C9C9C
+set -U fish_color_command F4F4F4
+set -U fish_color_comment B0B0B0
+set -U fish_color_end 969696
+set -U fish_color_error FFA779
+set -U fish_color_param A0A0F0
+set -U fish_color_quote 666A80
+set -U fish_color_redirection FAFAFA
+set -U fish_pager_color_completion normal
