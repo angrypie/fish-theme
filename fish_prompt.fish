@@ -7,15 +7,6 @@ function fish_prompt
   echo -n -s '> ' $normal
 end
 
-# Switch environment to "local" for edan.
-function edan-set-local
-  set -U EDAN_HOST_TYPE "local"
-end
-
-# Switch environment to "remote" for edan.
-function edan-set-remote
-  set -U EDAN_HOST_TYPE 'remote'
-end
 # Display the compressed current working path on the right
 # If the previous command returned any kind of error code, display that too
 # Display the following bits on the left:
@@ -60,11 +51,6 @@ function fish_right_prompt
   # Display [venvname] if in a virtualenv
   if set -q VIRTUAL_ENV
     echo -n -s (set_color -b cyan black) '[' (basename "$VIRTUAL_ENV") ']' $normal ' '
-  end
-
-  # Display [user & host] when on remote host
-  if [ "$EDAN_HOST_TYPE" = "remote" ]
-    _user_host; echo -n ': '
   end
 
   echo -n -s $cyan (prompt_pwd)
